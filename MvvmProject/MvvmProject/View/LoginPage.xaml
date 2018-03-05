@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmProject.View.LoginPage"
+             xmlns:viewModel="clr-namespace:MvvmProject.ViewModels; assembly=MvvmProject">
+    <ContentPage.BindingContext>
+        <viewModel:LoginViewModel>
+
+        </viewModel:LoginViewModel>
+
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+
+        <StackLayout Orientation="Vertical" Padding="20" Spacing="20">
+            <BoxView HeightRequest="10"/>
+            <Image HorizontalOptions="Center" WidthRequest="300" Source="maco.jpg"/>
+            <Frame BackgroundColor="#BF043055" HasShadow="False">
+                <StackLayout Orientation="Vertical" Spacing="10">
+                    <Entry x:Name="Login" Text="{Binding Login }" Placeholder="Login"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           Keyboard="Email"  
+                           TextColor="White"/>
+                    <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Password"   
+                           PlaceholderColor="White" HeightRequest="40"   
+                           IsPassword="True"  
+                           TextColor="White"/>
+                </StackLayout>
+            </Frame>
+            <Button Clicked="Button_OnClicked" Text="Login" TextColor="White"  
+                      
+                    BackgroundColor="#088da5" />
+            <Button Clicked="Button_OnClicked2" Text="Registration" TextColor="White"  
+                     
+                    BackgroundColor="#088da5" />
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

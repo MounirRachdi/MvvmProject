@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+           x:Class="MvvmProject.View.DetailsPage">
+   <!-- xmlns:viewModel="clr-namespace:MvvmProject.ViewModels;assembly=MvvmProject">
+
+    <ContentPage.BindingContext>
+        <viewModel:MainListView></viewModel:MainListView>
+    </ContentPage.BindingContext>-->
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <StackLayout>
+            <ListView x:Name="listview1" ItemsSource="{Binding Employees}" HasUnevenRows="True" ItemTapped="listview1_ItemTapped" >
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Vertical" >
+                              <!-- <Image x:Name="image1" Aspect="AspectFill"  HeightRequest ="20" WidthRequest="20" Source="{Binding ImageUrl}" />--> 
+                                <Label Text="{Binding Name}"  />
+                                <Label Text="{Binding Department}"  />
+                                <StackLayout IsVisible="{Binding IsVisible} "  
+                                     Orientation="Horizontal"  Margin="0,0,80,0"
+                                     >
+                                    <Button Text="Details"  
+                                     
+                                      WidthRequest="80"
+                                    FontSize="10" 
+                                    BackgroundColor="Chocolate"  
+                                    TextColor="White"/>
+                                    <Button Text="Edit"  
+                                    WidthRequest="80"
+                                    FontSize="10" 
+                                      
+                                    BackgroundColor="CornflowerBlue"  
+                                    TextColor="DarkBlue"/>
+                                    <Button Text="Remove" Clicked="Remove_Clicked"
+                                      WidthRequest="80"
+                                    FontSize="10" 
+                                     BackgroundColor="LightCoral"  
+                                    TextColor="Maroon" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Add Employee" Clicked="AddItem_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

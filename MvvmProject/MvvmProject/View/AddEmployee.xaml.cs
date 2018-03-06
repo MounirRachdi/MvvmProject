@@ -23,7 +23,7 @@ namespace MvvmProject.View
             
             emp = new Employee
             {
-                Name = "Ammar",
+                Name = "Ahmed",
                 Department = "Busness Intillegence."
             };
         

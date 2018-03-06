@@ -11,6 +11,15 @@
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
+       
+      <!--  <StackLayout Orientation="Vertical"   Margin="10,10,10,0"  BackgroundColor="White" HeightRequest="100">
+            <Label Text="Search"  TextColor="#44454a" FontSize="14"  Margin="10,10,10,0"></Label>
+
+            <SearchBar x:Name="Search" TextColor="Black"  TextChanged="SearchBar_TextChanged" />
+
+        </StackLayout>-->
+
+
         <StackLayout>
             <ListView x:Name="listview1" ItemsSource="{Binding Employees}" HasUnevenRows="True" ItemTapped="listview1_ItemTapped" >
                 <ListView.ItemTemplate>
@@ -18,18 +27,20 @@
                         <ViewCell>
                             <StackLayout Orientation="Vertical" >
                               <!-- <Image x:Name="image1" Aspect="AspectFill"  HeightRequest ="20" WidthRequest="20" Source="{Binding ImageUrl}" />--> 
+                                
                                 <Label Text="{Binding Name}"  />
                                 <Label Text="{Binding Department}"  />
                                 <StackLayout IsVisible="{Binding IsVisible} "  
-                                     Orientation="Horizontal"  Margin="0,0,80,0"
+                                     Orientation="Horizontal"  Margin="0,30,0,0"
                                      >
-                                    <Button Text="Details"  
+                                    
+                                    <Button Text="Details" Clicked="Detail_Clicked"  
                                      
                                       WidthRequest="80"
                                     FontSize="10" 
                                     BackgroundColor="Chocolate"  
                                     TextColor="White"/>
-                                    <Button Text="Edit"  
+                                    <Button Text="Edit" Clicked="Edit_Clicked" 
                                     WidthRequest="80"
                                     FontSize="10" 
                                       

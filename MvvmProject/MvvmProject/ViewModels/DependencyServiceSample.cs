@@ -8,5 +8,6 @@ namespace MvvmProject.ViewModels
 {
     class DependencyServiceSample
     {
+
     }
 }

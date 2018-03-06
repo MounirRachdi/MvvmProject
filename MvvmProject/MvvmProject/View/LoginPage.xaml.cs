@@ -24,7 +24,7 @@ namespace MvvmProject.View
             if (user.CheckValidate())
             {
 
-                Navigation.PushModalAsync(new MainPage());
+                Navigation.PushModalAsync(new NavigationPage(new MasterDetail()));
             }
             else
             {

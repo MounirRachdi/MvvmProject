@@ -13,10 +13,14 @@ namespace MvvmProject
 		{
 			InitializeComponent();
 
+            //MainPage = new MasterDetail();
+
             MainPage = new LoginPage();
+ 
+
 		}
 
-		protected override void OnStart ()
+    protected override void OnStart ()
 		{
 			// Handle when your app starts
 		}

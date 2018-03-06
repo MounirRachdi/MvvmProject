@@ -15,6 +15,7 @@ namespace MvvmProject.ViewModels
     {
         private Employee OldEmp;
         public ObservableCollection<Employee> Employees { get; set; }
+      
         public Command LoadItemsCommand { get; set; }
 
         public DetailEmployee()
@@ -28,6 +29,15 @@ namespace MvvmProject.ViewModels
                 var _item = item as Employee;
                 Employees.Add(_item);
                 await DataStore.AddItemAsync(_item);
+            });
+            MessagingCenter.Subscribe<EditEmployee, Employee>(this, "EditEmployee", async (obj, item) =>
+            {
+                var _item = item as Employee;
+               
+                UpDateEmployee(_item);
+                await DataStore.UpdateItemAsync(_item);
+               
+               
             });
 
         }
@@ -90,17 +100,21 @@ namespace MvvmProject.ViewModels
             OldEmp = emp;
         }
 
-        private void UpDateEmployee(Employee employee)
+        public void UpDateEmployee(Employee employee)
         {
+            if (Employees.Contains(employee))
+            {
+                var Index = Employees.IndexOf(employee);
 
-            var Index = Employees.IndexOf(employee);
-            
-           // DataStore.DeleteItemAsync(employee);
-            Employees.Remove(employee);
-            Employees.Insert(Index, employee);
-           // DataStore.AddItemAsync(employee);
+
+                Employees.Remove(employee);
+
+                Employees.Insert(Index, employee);
+            }
+           
 
         }
+        
         public Command<Employee> RemoveCommand
         {
             get
@@ -108,12 +122,29 @@ namespace MvvmProject.ViewModels
 
                 return new Command<Employee>((emp) =>
                 {
+                    DataStore.DeleteItemAsync(emp);
                     Employees.Remove(emp);
+                    
 
                 });
 
             }
 
         }
+        public Command<Employee> EditCommand
+        {
+            get
+            {
+                return new Command<Employee>((emp) =>
+                {
+                    DataStore.UpdateItemAsync(emp);
+                    
+
+                });
+
+            }
+
+        }
+        
     }
 }

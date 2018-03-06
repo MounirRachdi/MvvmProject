@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MvvmProject.View.MasterDetailMaster"
+             Title="Master">
+  <!--<StackLayout>
+    <ListView x:Name="MenuItemsListView"
+              SeparatorVisibility="None"
+              HasUnevenRows="true"
+              >
+      <ListView.Header>
+        <Grid BackgroundColor="#03A9F4">
+          <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="5"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="5"/>
+          </Grid.ColumnDefinitions>
+          <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="10"/>
+          </Grid.RowDefinitions>
+        
+        </Grid>
+      </ListView.Header>
+      --><!--<ListView.ItemTemplate>
+        <DataTemplate>
+          <ViewCell></ViewCell></DataTemplate>
+      </ListView.ItemTemplate>
+    
+    </ListView>-->
+        <StackLayout >
+            
+            <Label Text="Master page Menu"></Label>
+                            <Button Text="Add Employee" BackgroundColor="Blue" Clicked="Button_Clicked" ></Button>
+                            <Button Text="List Employee" BackgroundColor="DeepSkyBlue" Clicked="Button_Clicked2" ></Button>
+                            <Button Text="About Us" BackgroundColor="Yellow" ></Button>
+                            <Button Text="Contact" BackgroundColor="Yellow" ></Button>
+                        </StackLayout>
+                    
+        
+  <!--</StackLayout>-->
+</ContentPage>

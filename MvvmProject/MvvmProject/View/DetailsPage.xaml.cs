@@ -17,6 +17,7 @@ namespace MvvmProject.View
     public partial class DetailsPage : ContentPage
     {
         DetailEmployee viewModel;
+        int index = 0;
         public DetailsPage()
         {
             InitializeComponent();
@@ -40,7 +41,14 @@ namespace MvvmProject.View
             //await Navigation.PushAsync(new AddEmployee());
             await Navigation.PushModalAsync(new NavigationPage(new AddEmployee()));
         }
-
+        private void Edit_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var employee = button.BindingContext as Employee;
+            var vm = BindingContext as DetailEmployee;
+          
+            Navigation.PushModalAsync(new NavigationPage(new EditEmployee(employee)));
+        }
         protected override void OnAppearing()
         {
             base.OnAppearing();
@@ -51,10 +59,9 @@ namespace MvvmProject.View
 
         private void listview1_ItemTapped(object sender, ItemTappedEventArgs e)
         {
-             /*var vm = BindingContext as MainListView;
-             var emp = e.Item as Employee;
-             vm.ShoworHiddenEmployees(emp);*/
+           
            var emp = e.Item as Employee;
+           
             var vm = BindingContext as DetailEmployee;
             
             vm?.ShoworHiddenEmployee(emp);
@@ -62,27 +69,41 @@ namespace MvvmProject.View
 
         private void listview1_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-           
+        
         }
+        
         private void Remove_Clicked(object sender, EventArgs e)
         {
+            var button = sender as Button;
+          var employee=  button.BindingContext as Employee;
+            var vm = BindingContext as DetailEmployee;
+            vm?.RemoveCommand.Execute(employee);
+           
+        }
+        private void Detail_Clicked(object sender, EventArgs e)
+        {
+            var button = sender as Button;
+            var employee = button.BindingContext as Employee;
+            Navigation.PushModalAsync(new PopUpPage(new EmployeeDetailViewModel(employee)));
 
         }
 
-        /*private void EmployeeTapped(object sender, ItemTappedEventArgs e)
-{
-var empp = e.Item as Employee;
-//DisplayAlert("Student Info", empp.ImageUrl + "\n Name:" + empp.Name + "\n Departement:" + empp.Department, "Ok");
+      /*  private void SearchBar_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            {
+                //thats all you need to make a search  
 
-Navigation.PushModalAsync(new PopUpPage(empp.ImageUrl, empp.Name, empp.Department));
+                if (string.IsNullOrEmpty(e.NewTextValue))
+                {
+                    listview1.ItemsSource = ;
+                }
 
-
-}
-private void OpenPopUp(object sender, EventArgs e)
-{
-
-// Navigation.PushModalAsync(new PopUpPage());
-}*/
-
+                else
+                {
+                    listview1.ItemsSource = tempdata.Where(x => x.BagName.ToLower().Contains(e.NewTextValue.ToLower()));
+                }
+            }
+        }
+        */
     }
 }

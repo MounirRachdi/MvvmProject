@@ -17,14 +17,14 @@ namespace MvvmProject.Services
             var mockItems = new List<Employee>
             {
                 new Employee
-                 {
+                 {  Id="1",
                      Name = "Mounir",
                      Department = "IT",
                      ImageUrl = "user1.jpg",
                      IsVisible=false
                  },
                  new Employee
-                 {
+                 {    Id="2",
                      Name = "Mohamed",
                      Department = "marketing",
                      ImageUrl = "user2.png",
@@ -32,7 +32,7 @@ namespace MvvmProject.Services
 
                  },
                  new Employee
-                 {
+                 {    Id="3",
                      Name = "Ahmed",
                      Department = "sfax departement",
                      ImageUrl = "user3.jpg",
@@ -40,7 +40,7 @@ namespace MvvmProject.Services
 
                  },
                  new Employee
-                 {
+                 {   Id="4",
                      Name = "Asma",
                      Department = "management",
                      ImageUrl = "user4.jpg",
@@ -66,7 +66,7 @@ namespace MvvmProject.Services
 
         public async Task<bool> UpdateItemAsync(Employee item)
         {
-            var _item = employees.Where((Employee arg) => arg.Name == item.Name).FirstOrDefault();
+            var _item = employees.Where((Employee arg) => arg.Id == item.Id).FirstOrDefault();
             employees.Remove(_item);
             employees.Add(item);
 
@@ -75,7 +75,7 @@ namespace MvvmProject.Services
 
         public async Task<bool> DeleteItemAsync(Employee item)
         {
-            var _item = employees.Where((Employee arg) => arg.Name == item.Name).FirstOrDefault();
+            var _item = employees.Where((Employee arg) => arg.Id == item.Id).FirstOrDefault();
             employees.Remove(_item);
 
             return await Task.FromResult(true);
@@ -83,7 +83,7 @@ namespace MvvmProject.Services
 
         public async Task<Employee> GetItemAsync(string id)
         {
-            return await Task.FromResult(employees.FirstOrDefault(s => s.Name == id));
+            return await Task.FromResult(employees.FirstOrDefault(s => s.Id == id));
         }
 
         public async Task<IEnumerable<Employee>> GetItemsAsync(bool forceRefresh = false)

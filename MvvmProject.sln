@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmProject.Android", "Mvvm
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmProject.UWP", "MvvmProject\MvvmProject.UWP\MvvmProject.UWP.csproj", "{B8EC0144-B420-4F41-AF3F-03AA80AE6748}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvvmProject", "MvvmProject\MvvmProject\MvvmProject.csproj", "{C60AC1AB-3BA3-4924-87D0-B152D7F672F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MvvmProject", "MvvmProject\MvvmProject\MvvmProject.csproj", "{C60AC1AB-3BA3-4924-87D0-B152D7F672F7}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

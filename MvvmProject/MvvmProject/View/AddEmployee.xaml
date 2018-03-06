@@ -5,13 +5,17 @@
     
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
+            <Label Text="Id" FontSize="Medium" />
+            <Entry x:Name="idEmp" Text="{Binding emp.Id}" FontSize="Small" />
             <Label Text="Name" FontSize="Medium" />
-            <Entry Text="{Binding emp.Name}" FontSize="Small" />
+            <Entry x:Name="Name" Text="{Binding emp.Name}" FontSize="Small" />
             <Label Text="Departement" FontSize="Medium" />
-            <Entry Text="{Binding emp.Department}" FontSize="Small" Margin="0" />
+            <Entry x:Name="departement" Text="{Binding emp.Department}" FontSize="Small" Margin="0" />
             <Label Text="Choose Image" FontSize="Medium"/>
             
             <Button Clicked="Save_Clicked" Text="Save"></Button>
+            <Button Clicked="Save_Clicked2" Text="Add To DataBase"></Button>
+            <Button x:Name="ShowButton" Text="Show" Clicked="Show_Button"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

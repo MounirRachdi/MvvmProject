@@ -17,7 +17,7 @@ namespace MvvmProject.View
     public partial class DetailsPage : ContentPage
     {
         DetailEmployee viewModel;
-        int index = 0;
+        
         public DetailsPage()
         {
             InitializeComponent();

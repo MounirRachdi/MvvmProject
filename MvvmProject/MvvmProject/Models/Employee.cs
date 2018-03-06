@@ -7,7 +7,7 @@ namespace MvvmProject.Models
 {
    public class Employee
     {
-       [PrimaryKey, AutoIncrement]
+       [PrimaryKey]
         public string Id { get; set; }
         public string Name { get; set; }
         public string Department { get; set; }

@@ -34,7 +34,7 @@ namespace MvvmProject.ViewModels
             {
                 var _item = item as Employee;
                
-                UpDateEmployee(_item);
+               //UpDateEmployee(_item);
                 await DataStore.UpdateItemAsync(_item);
                
                

@@ -84,6 +84,8 @@ namespace MvvmProject.View
         {
             var button = sender as Button;
             var employee = button.BindingContext as Employee;
+            var vm = BindingContext as DetailEmployee;
+            //vm?.EditCommand.Execute(employee);
             Navigation.PushModalAsync(new PopUpPage(new EmployeeDetailViewModel(employee)));
 
         }

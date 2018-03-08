@@ -11,17 +11,17 @@
     </ContentPage.BindingContext>
     <ContentPage.Content>
 
-        <StackLayout Orientation="Vertical" Padding="20" Spacing="20">
+        <StackLayout Orientation="Vertical" Padding="20" Spacing="40">
             <BoxView HeightRequest="10"/>
             <Image HorizontalOptions="Center" WidthRequest="300" Source="maco.jpg"/>
-            <Frame BackgroundColor="#BF043055" HasShadow="False">
-                <StackLayout Orientation="Vertical" Spacing="10">
+            <Frame BackgroundColor="#BF043055" HasShadow="False" >
+                <StackLayout Orientation="Vertical" Spacing="40">
                     <Entry x:Name="Login" Text="{Binding Login }" Placeholder="Login"   
-                           PlaceholderColor="White" HeightRequest="40"   
+                           PlaceholderColor="White" HeightRequest="70"   
                            Keyboard="Email"  
                            TextColor="White"/>
                     <Entry x:Name="Password" Text="{Binding Password}" Placeholder="Password"   
-                           PlaceholderColor="White" HeightRequest="40"   
+                           PlaceholderColor="White" HeightRequest="70"   
                            IsPassword="True"  
                            TextColor="White"/>
                 </StackLayout>

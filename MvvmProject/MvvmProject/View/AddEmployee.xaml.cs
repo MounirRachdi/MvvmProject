@@ -16,7 +16,7 @@ namespace MvvmProject.View
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class AddEmployee : ContentPage
     {
-        private SQLiteConnection conn;
+        //private SQLiteConnection conn;
        // public Employee employee;
         public Employee emp { get; set; }
         public AddEmployee()
@@ -24,12 +24,12 @@ namespace MvvmProject.View
             InitializeComponent();
             
             emp = new Employee
-            {
+            { Id="5",
                 Name = "Ahmed",
                 Department = "Busness Intillegence."
             };
-            conn = DependencyService.Get<ISQLite>().GetConnection();
-            conn.CreateTable<Employee>();
+            //conn = DependencyService.Get<ISQLite>().GetConnection();
+            //conn.CreateTable<Employee>();
             BindingContext = this;
         }
       async void Save_Clicked(object sender, EventArgs e)
@@ -40,20 +40,6 @@ namespace MvvmProject.View
             await Navigation.PopModalAsync();
             //await Navigation.PushModalAsync(new DetailsPage());
         }
-        private void Save_Clicked2(object sender, EventArgs e)
-        {
-            emp = new Employee
-            {
-                Id = idEmp.Text,
-                Name=Name.Text,
-                Department=departement.Text,
-                
-            };
-            conn.Insert(emp);
-        }
-        private void Show_Button(object sender, EventArgs e)
-        {
-
-        }
+       
     }
 }

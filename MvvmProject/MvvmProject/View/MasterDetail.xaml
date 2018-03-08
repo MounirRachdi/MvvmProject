@@ -4,8 +4,19 @@
              x:Class="MvvmProject.View.MasterDetail"
              xmlns:pages="clr-namespace:MvvmProject.View">
   <MasterDetailPage.Master>
-    <pages:MasterDetailMaster x:Name="MasterPage" />
-  </MasterDetailPage.Master>
+    <!--<pages:MasterDetailMaster x:Name="MasterPage" />-->
+        <ContentPage Title="Menu">
+
+            <StackLayout Orientation="Vertical">
+                <Label Text="Master page Menu"></Label>
+                <Button Text="Add Employee" BackgroundColor="Blue" Clicked="Button_Clicked" ></Button>
+                <Button Text="List Employee" BackgroundColor="DeepSkyBlue" Clicked="Button_Clicked2" ></Button>
+                <Button Text="About Us" BackgroundColor="Yellow" ></Button>
+                <Button Text="Contact" BackgroundColor="Yellow" ></Button>
+            </StackLayout>
+
+        </ContentPage>
+    </MasterDetailPage.Master>
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>

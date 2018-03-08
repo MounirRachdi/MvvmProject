@@ -2,7 +2,12 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MvvmProject.View.AddEmployee">
-    
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem Text="Add Employee"
+                     Clicked="Save_Clicked"
+                      />
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
             <Label Text="Id" FontSize="Small" />
@@ -13,8 +18,8 @@
             <Entry x:Name="departement" Text="{Binding emp.Department}" FontSize="Small" Margin="0" />
             
             
-            <Button Clicked="Save_Clicked" Text="Save"></Button>
-            <!--<Button Clicked="Save_Clicked2" Text="Add To DataBase"></Button>
+           <!-- <Button Clicked="Save_Clicked" Text="Save"></Button>
+            <Button Clicked="Save_Clicked2" Text="Add To DataBase"></Button>
             <Button x:Name="ShowButton" Text="Show" Clicked="Show_Button"/>-->
         </StackLayout>
     </ContentPage.Content>

@@ -2,13 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
            x:Class="MvvmProject.View.DetailsPage">
-   <!-- xmlns:viewModel="clr-namespace:MvvmProject.ViewModels;assembly=MvvmProject">
+    <!--xmlns:viewModel="clr-namespace:MvvmProject.ViewModels;assembly=MvvmProject">-->
 
-    <ContentPage.BindingContext>
-        <viewModel:MainListView></viewModel:MainListView>
-    </ContentPage.BindingContext>-->
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
+
+        <ToolbarItem Text="Add Employee"
+                     Clicked="AddItem_Clicked"
+                     Icon="ic_add_player.png" Order="Primary" />
+
+        <ToolbarItem Text="Edit Employee"
+                     Icon="ic_edit.png"
+                      Order="Secondary" />
+
+        <ToolbarItem Text="Delete Employee"
+                     Icon="ic_delete.png"
+                      Order="Default" />
+        
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
        
@@ -20,7 +29,7 @@
         </StackLayout>-->
 
 
-        <StackLayout>
+        <StackLayout Padding="15">
             <ListView x:Name="listview1" ItemsSource="{Binding Employees}" HasUnevenRows="True" ItemTapped="listview1_ItemTapped" >
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -31,23 +40,23 @@
                                 <Label Text="{Binding Name}"  />
                                 <Label Text="{Binding Department}"  />
                                 <StackLayout IsVisible="{Binding IsVisible} "  
-                                     Orientation="Horizontal"  Margin="0,30,0,0"
+                                     Orientation="Horizontal"  Margin="0,0,80,0"
                                      >
                                     
                                     <Button Text="Details" Clicked="Detail_Clicked"  
                                      
-                                      WidthRequest="100"
+                                      WidthRequest="110"
                                     FontSize="15" 
                                     BackgroundColor="Chocolate"  
                                     TextColor="White"/>
                                     <Button Text="Edit" Clicked="Edit_Clicked" 
-                                    WidthRequest="100"
+                                    WidthRequest="110"
                                     FontSize="15" 
                                       
                                     BackgroundColor="CornflowerBlue"  
                                     TextColor="DarkBlue"/>
                                     <Button Text="Remove" Clicked="Remove_Clicked"
-                                      WidthRequest="100"
+                                      WidthRequest="110"
                                     FontSize="15" 
                                      BackgroundColor="LightCoral"  
                                     TextColor="Maroon" />
@@ -57,7 +66,7 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Add Employee" Clicked="AddItem_Clicked"></Button>
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

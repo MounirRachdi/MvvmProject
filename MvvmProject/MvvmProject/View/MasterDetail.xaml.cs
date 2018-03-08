@@ -32,5 +32,15 @@ namespace MvvmProject.View
 
             MasterPage.ListView.SelectedItem = null;
         }*/
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            Navigation.PushModalAsync(new AddEmployee());
+
+        }
+        private void Button_Clicked2(object sender, EventArgs e)
+        {
+           // new NavigationPage(new DetailsPage());
+            Navigation.PushAsync(new DetailsPage());
+        }
     }
 }

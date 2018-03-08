@@ -13,9 +13,9 @@ namespace MvvmProject
 		{
 			InitializeComponent();
 
-            //MainPage = new MasterDetail();
+           // MainPage = new NavigationPage( new DetailsPage());
 
-            MainPage = new LoginPage();
+           MainPage = new LoginPage();
  
 
 		}
